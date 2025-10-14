@@ -1,0 +1,167 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Hoàng Thái Minh",
+      "email": "lemonboy2k6@gmail.com",
+      "password": "Minh2832006!",
+      "created_at": "2025-02-28T12:00:00Z"
+    },
+    {
+      "id": 2,
+      "username": "Doanh Tuấn",
+      "email": "doanhtuan@gmail.com",
+      "password": "Tuan2006!",
+      "created_at": "2025-10-13T06:07:02.335Z"
+    }
+  ],
+  "boards": [
+    {
+      "id": 101,
+      "title": "Board 1",
+      "backdrop": "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T02:39:34.350Z"
+    },
+    {
+      "id": 102,
+      "title": "Board 2",
+      "backdrop": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T02:39:40.682Z"
+    },
+    {
+      "id": 103,
+      "title": "Board 3",
+      "backdrop": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T02:39:45.404Z"
+    },
+    {
+      "id": 104,
+      "title": "Board 4",
+      "backdrop": "https://images.unsplash.com/photo-1511497584788-876760111969?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T02:39:49.589Z",
+      "is_closed": true
+    },
+    {
+      "id": 105,
+      "title": "Board 5",
+      "backdrop": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T02:40:06.062Z",
+      "is_starred": true
+    },
+    {
+      "id": 106,
+      "title": "Board 6",
+      "backdrop": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T02:40:12.182Z",
+      "is_starred": true
+    },
+    {
+      "id": 107,
+      "title": "Board 7",
+      "backdrop": "https://images.unsplash.com/photo-1511497584788-876760111969?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T02:40:17.436Z",
+      "is_starred": true,
+      "is_closed": true
+    },
+    {
+      "id": 108,
+      "title": "Board 9",
+      "backdrop": "https://images.unsplash.com/photo-1511497584788-876760111969?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:18:26.618Z"
+    },
+    {
+      "id": 109,
+      "title": "Board 10",
+      "backdrop": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:18:33.710Z"
+    },
+    {
+      "id": 110,
+      "title": "Board 11",
+      "backdrop": "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:18:44.555Z"
+    }
+  ],
+  "lists": [
+    {
+      "id": 202,
+      "board_id": 101,
+      "title": "TaskList01",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:02:32.956Z"
+    },
+    {
+      "id": 203,
+      "board_id": 101,
+      "title": "TaskList02",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:03:39.166Z"
+    },
+    {
+      "id": 204,
+      "board_id": 101,
+      "title": "TaskList03",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:03:49.541Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 302,
+      "list_id": 202,
+      "title": "Task2",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:03:31.261Z",
+      "description": "",
+      "status": "DONE"
+    },
+    {
+      "id": 303,
+      "list_id": 202,
+      "title": "Task3",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:03:33.910Z",
+      "status": "DONE",
+      "description": ""
+    },
+    {
+      "id": 301,
+      "list_id": 203,
+      "title": "Task1",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:03:41.463Z"
+    },
+    {
+      "id": 302,
+      "list_id": 203,
+      "title": "Task2",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:03:43.692Z"
+    },
+    {
+      "id": 301,
+      "list_id": 204,
+      "title": "Task1",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:03:52.155Z"
+    },
+    {
+      "id": 304,
+      "list_id": 202,
+      "title": "Task4",
+      "user_id": 2,
+      "created_at": "2025-10-14T06:59:09.700Z"
+    }
+  ],
+  "tags": []
+}
