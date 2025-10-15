@@ -1,5 +1,6 @@
 import api from './api';
 import { getCurrentUser } from '../utils/auth';
+import { generateTaskId } from '../utils/id';
 
 export interface TaskItem {
   id?: number;
@@ -35,9 +36,10 @@ export const taskService = {
   async create(payload: TaskItem) {
     const currentUser = getCurrentUser();
     if (!currentUser?.id) throw new Error('User not authenticated');
-    
+    const id = await generateTaskId();
     const res = await api.post<TaskItem>('/tasks', {
       ...payload,
+      id,
       user_id: currentUser.id
     });
     return res.data;

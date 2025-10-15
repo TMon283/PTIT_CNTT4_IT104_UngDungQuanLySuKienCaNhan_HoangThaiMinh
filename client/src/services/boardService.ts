@@ -1,4 +1,5 @@
 import api from './api';
+import { generateBoardId } from '../utils/id';
 import { getCurrentUser } from '../utils/auth';
 
 export interface Board {
@@ -33,9 +34,10 @@ export const boardService = {
   async create(payload: Board) {
     const currentUser = getCurrentUser();
     if (!currentUser?.id) throw new Error('User not authenticated');
-    
+    const id = await generateBoardId();
     const res = await api.post<Board>('/boards', {
       ...payload,
+      id,
       user_id: currentUser.id
     });
     return res.data;

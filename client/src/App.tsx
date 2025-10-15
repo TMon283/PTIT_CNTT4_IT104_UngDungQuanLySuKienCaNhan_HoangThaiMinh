@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { Provider, useDispatch } from 'react-redux';
+import { Provider } from 'react-redux';
 import { store } from './stores';
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
@@ -8,7 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Board from "./pages/Board";
 import './index.css'
 import { isAuthenticated } from './utils/auth';
-import { useAppSelector } from './stores/hooks';
+import { useAppSelector, useAppDispatch } from './stores/hooks';
 import { fetchCurrentUser } from './stores/slices/userSlice';
 
 const ProtectedRoute: React.FC<{ children: React.ReactElement }> = ({ children }) => {
@@ -21,7 +21,7 @@ const ProtectedRoute: React.FC<{ children: React.ReactElement }> = ({ children }
 };
 
 const AppContent: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   
   useEffect(() => {
     if (isAuthenticated()) {

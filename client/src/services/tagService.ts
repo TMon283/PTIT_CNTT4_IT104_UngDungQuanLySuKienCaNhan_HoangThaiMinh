@@ -1,5 +1,6 @@
 import api from './api';
 import { getCurrentUser } from '../utils/auth';
+import { generateTagId } from '../utils/id';
 
 export interface Tag {
   id?: number;
@@ -23,9 +24,10 @@ export const tagService = {
   async create(payload: Tag) {
     const currentUser = getCurrentUser();
     if (!currentUser?.id) throw new Error('User not authenticated');
-    
+    const id = await generateTagId();
     const res = await api.post<Tag>('/tags', {
       ...payload,
+      id,
       user_id: currentUser.id
     });
     return res.data;

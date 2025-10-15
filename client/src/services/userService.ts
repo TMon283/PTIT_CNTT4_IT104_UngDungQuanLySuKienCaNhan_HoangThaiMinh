@@ -1,4 +1,5 @@
 import api from './api';
+import { generateUserId } from '../utils/id';
 
 export interface RegisterPayload {
   username: string;
@@ -15,7 +16,8 @@ export interface User {
 
 export const userService = {
   register: async (payload: RegisterPayload) => {
-    const res = await api.post('/users', payload);
+    const id = await generateUserId();
+    const res = await api.post('/users', { ...payload, id });
     return res.data as User;
   },
   login: async (email: string, password: string) => {

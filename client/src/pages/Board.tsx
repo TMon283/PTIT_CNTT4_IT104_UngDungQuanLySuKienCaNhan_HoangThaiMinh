@@ -1,13 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { X, Calendar, AlertCircle, Tag, ChevronDown, MoreHorizontal, List, ListFilter } from 'lucide-react';
+import { X, Calendar, AlertCircle, Tag, ChevronDown, MoreHorizontal, List as ListIcon, ListFilter } from 'lucide-react';
 import TaskDetailModal from '../components/TaskDetailModal';
 import Swal from 'sweetalert2';
 import { useAppDispatch, useAppSelector } from '../stores/hooks';
 import { fetchBoardById, fetchUserBoards, updateBoard } from '../stores/slices/boardSlice';
 import { fetchListsByBoard, createList, updateList, deleteList } from '../stores/slices/listSlice';
 import { fetchTasksByList, createTask } from '../stores/slices/taskSlice';
-import { getCurrentUser } from '../utils/auth';
 
 interface Card {
   id: string;
@@ -139,10 +138,8 @@ const Board: React.FC = () => {
     setLists(full);
   }, [reduxTasks, reduxLists]);
 
-  // Re-fetch tasks when taskId changes (when modal is closed)
   useEffect(() => {
     if (boardId && !taskId) {
-      // Modal was closed, refresh tasks to get latest data
       reduxLists.forEach((list: any) => {
         dispatch(fetchTasksByList(Number(list.id)));
       });
@@ -332,7 +329,7 @@ const Board: React.FC = () => {
                       : 'text-blue-600 hover:bg-gray-100'
                   }`}
                 >
-                  <span className="text-2xl w-5 h-5 flex justify-center items-center"><List size={32}/></span>
+                  <span className="text-2xl w-5 h-5 flex justify-center items-center"><ListIcon size={32}/></span>
                   <span className="font-medium">Boards</span>
                 </button>
                 <button
@@ -396,7 +393,6 @@ const Board: React.FC = () => {
                     <span className="text-xl">{boardStarred ? '★' : '☆'}</span>
                   </button>
                 </div>
-                {/* Left action buttons */}
                 <div className="flex items-center gap-2 ml-4">
                   <button className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors flex items-center gap-2 text-sm font-medium">
                     <span>⊞</span>
@@ -777,7 +773,6 @@ const Board: React.FC = () => {
       )}
       {taskId && (
         <TaskDetailModal 
-          // title={selectedCard?.card.title}
           listTitle={selectedCard?.listTitle}
         />
       )}

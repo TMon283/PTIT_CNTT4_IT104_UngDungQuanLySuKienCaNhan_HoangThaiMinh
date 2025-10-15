@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../stores/hooks';
 import { fetchUserBoards, createBoard, updateBoard, deleteBoard } from '../stores/slices/boardSlice';
 import { clearUser } from '../stores/slices/userSlice';
-import { getCurrentUser } from '../utils/auth';
 import {List} from 'lucide-react'
 
 interface Board {

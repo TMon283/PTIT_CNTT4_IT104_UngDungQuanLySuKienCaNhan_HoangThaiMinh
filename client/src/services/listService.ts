@@ -1,5 +1,6 @@
 import api from './api';
 import { getCurrentUser } from '../utils/auth';
+import { generateListId } from '../utils/id';
 
 export interface ListItem {
   id?: number;
@@ -23,9 +24,10 @@ export const listService = {
   async create(payload: ListItem) {
     const currentUser = getCurrentUser();
     if (!currentUser?.id) throw new Error('User not authenticated');
-    
+    const id = await generateListId();
     const res = await api.post<ListItem>('/lists', {
       ...payload,
+      id,
       user_id: currentUser.id
     });
     return res.data;

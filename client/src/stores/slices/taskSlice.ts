@@ -97,7 +97,6 @@ const taskSlice = createSlice({
       })
       .addCase(fetchTasksByList.fulfilled, (state, action) => {
         state.loading = false;
-        // Merge tasks instead of replacing them
         const newTasks = action.payload;
         const existingTasks = state.tasks.filter(task => 
           !newTasks.some((newTask: any) => newTask.list_id === task.list_id)
